@@ -1,98 +1,123 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Chat</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
-        <link rel="stylesheet" href="style.css">
-    </head>
-	<!--Coded With Love By Mutiullah Samim-->
-	<body>
-		<div class="container-fluid h-100">
-			<div class="row justify-content-center h-100">
-				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
-					<div class="card-header">
-						<div class="input-group">
-							<input type="text" placeholder="Search..." name="" class="form-control search">
-							<div class="input-group-prepend">
-								<span class="input-group-text search_btn"><i class="fas fa-plus"></i></span>
+<html lang="en">
+<head>
+	<title>JK Chat || Joe ft Kiet</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+	<div class="header d-flex justify-content-between">
+		<div class="logo"><img src="logo.png" alt="logo" width="200px"></div>
+		<div class="">
+			<div class="avatar-btn d-flex">
+				<img src="1.png" alt="avatar" width="50px" class="rounded-circle">
+				<span style="color: cornflowerblue;" class="m-2">曾根崎</span>
+				<form action="UserLogoutController" class="logOutForm">
+					<button type="submit" class="btn m-1 p-0 mt-1"><img src="log-out.svg" alt="logout" width="25px"></button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container chat-container mt-3">
+		<div class="row h-100">
+			<div class="col-4 border-chat-lightgray px-0" id="sidebar">
+				<div id="sidebar-content" class="w-200 h-100">
+					<form class="input-group p-0 d-xs-none" id="search-group">
+						<input type="text" class="form-control border-0" placeholder="テーマ追加" id="search" name="topic-text">
+						<span class="input-group-addon">
+							<button class="btn border-0 bg-white text-primary hover-color-darkblue" type="submit">
+								<i class="fa fa-plus fa-fw"></i>
+							</button>
+						</span>
+					</form>
+					<div class="sidebar-scroll" id="list-group">
+						<ul class="list-group w-200" id="friend-list">
+							<a href="AllController?topicId=1">
+								<li class="list-group-item p-1 hover-bg-lightgray active">
+									<div class="float-left">	
+										<img src="1.png" class="rounded-circle" width="50px">
+									</div>
+									<span class="d-xs-none username ml-2">あなたはなぜ日本へ来ましたか、教えてください。</span>
+								</li>
+							</a>
+							<a href="AllController?topicId=2">
+								<li class="list-group-item p-1 hover-bg-lightgray">
+									<div class="float-left">	
+										<img src="2.jpg" class="rounded-circle" width="50px">
+									</div>
+									<span class="d-xs-none username ml-2">あなたはなぜ日本へ来ましたか、教えてください。</span>
+								</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col d-flex p-0">
+				<div class="card" style="width: 100%;">
+					<div class="card-header bg-darkblue text-white py-1 px-2" style="flex: 1 1">
+						<div class="d-flex flex-row justify-content-start">
+							<div class="col-1 p-1">
+								<button class="btn text-white bg-darkblue p-0 hover-color-lightgray">
+									<i class="fas fa-bars fa-2x"></i>
+								</button>
+							</div>
+							<div class="col">
+								<div class="my-0">
+									<b>今日は何を食べる</b>
+								</div>
+								<div class="my-0">
+									<small>Post Date: Feb 18 2017</small>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card-body contacts_body">
-						<ui class="contacts">
-						<li class="active">
-							<div class="d-flex bd-highlight">
-								<div class="img_cont">
-									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img">
-									<span class="online_icon"></span>
-								</div>
-								<div class="user_info">
-									<span>Maryam Naz</span>
-									<p>Maryam is online</p>
+					<div class="card-body bg-lightgrey d-flex flex-column p-0" style="flex: 9 1">
+						<div class="container message-scroll" style="flex: 1 1">
+							<div class="row">
+								<div class="card message-card m-1">
+									<div class="card-body p-2">
+										<span><img src="1.png" alt="avatar" width="40px" class="rounded-circle"></span>
+										<span class="mx-2">カレーでいいですか</span>
+									</div>
 								</div>
 							</div>
-						</li>
-						</ui>
-					</div>
-					<div class="card-footer"></div>
-				</div></div>
-				<div class="col-md-8 col-xl-6 chat">
-					<div class="card">
-						<div class="card-header msg_head">
-							<div class="d-flex bd-highlight">
-								<div class="user_info">
-									<span>Anh Kiet</span>
-									<p>1767 Messages</p>
-								</div>
-								<div class="video_cam">
-									<span>Theme 1</span>
+							<div class="row justify-content-end">
+								<div class="card message-card bg-lightblue m-1">
+									<div class="card-body p-2">
+										<span class="mx-2">もつ鍋は？</span>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="card-body msg_card_body">
-							<div class="d-flex justify-content-start mb-4">
-								<div class="img_cont_msg">
-									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img_msg">
-								</div>
-								<div class="msg_cotainer">
-									I am looking for your next templates
-									<span class="msg_time">9:07 AM, Today</span>
-								</div>
-							</div>
-							<div class="d-flex justify-content-start mb-4">
-								<div class="img_cont_msg">
-									<img src="https://www.khaama.com/wp-content/uploads/2019/02/Afghan-Singer-Ghawgha-Taban-880x672-880x672.jpg" class="rounded-circle user_img_msg">
-								</div>
-								<div class="msg_cotainer">
-									Bye, see you
-									<span class="msg_time">9:12 AM, Today</span>
-								</div>
-							</div>
-						</div>
-						<div class="card-footer">
-							<div class="input-group">
-								<div class="input-group-append">
-									<span class="input-group-text attach_btn" style="font-size: 2em;"><i class="far fa-laugh"></i></span>
-								</div>
-								<textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
-								<div class="input-group-append">
-									<span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
-								</div>
-							</div>
-						</div>
+						<form class="input-group" action="AddCommentController">
+							<input type="text" class="form-control border-0" placeholder="Input message..." name="comment-text">
+							<span class="input-group-addon">
+								<button class="btn border-0 bg-white text-primary hover-color-darkblue" type="submit">
+									<i class="fab fa-telegram-plane fa-2x"></i>
+								</button>
+							</span>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-	</body>
+		<!-- row -->
+	</div>
+	<!-- container -->
+	<script src="script.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();
+		});
+	</script>
+</body>
 </html>
-				                            
